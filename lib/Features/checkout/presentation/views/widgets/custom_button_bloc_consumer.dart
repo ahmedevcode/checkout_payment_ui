@@ -19,9 +19,11 @@ class CustomButtonBlocConsumer extends StatelessWidget {
   const CustomButtonBlocConsumer({
     super.key,
     required this.isPaypal,
+    required this.isFawry,
   });
 
   final bool isPaypal;
+  final bool isFawry;
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<PaymentCubit, PaymentState>(
@@ -43,8 +45,12 @@ class CustomButtonBlocConsumer extends StatelessWidget {
         return CustomButton(
             onTap: () {
               if (isPaypal) {
-                var transctionsData = getTransctionsData();
-                exceutePaypalPayment(context, transctionsData);
+                // var transctionsData = getTransctionsData();
+                // exceutePaypalPayment(context, transctionsData);
+                print('navigation to paypalpatment');
+              }
+              if (isFawry) {
+                print('navigation to fawrypatment');
               } else {
                 excuteStripePayment(context);
               }
@@ -59,7 +65,7 @@ class CustomButtonBlocConsumer extends StatelessWidget {
     PaymentIntentInputModel paymentIntentInputModel = PaymentIntentInputModel(
       amount: '100',
       currency: 'USD',
-      cusomerId: 'cus_Onu3Wcrzhehlez',
+      cusomerId: 'cus_RNA6p89wpgrOUy',
     );
     BlocProvider.of<PaymentCubit>(context)
         .makePayment(paymentIntentInputModel: paymentIntentInputModel);
@@ -70,8 +76,8 @@ class CustomButtonBlocConsumer extends StatelessWidget {
     Navigator.of(context).push(MaterialPageRoute(
       builder: (BuildContext context) => PaypalCheckoutView(
         sandboxMode: true,
-        clientId: ApiKeys.clientID,
-        secretKey: ApiKeys.paypalSecretKey,
+        clientId: 'cus_RNA6p89wpgrOUy',
+        secretKey: ApiKeys.secretkey,
         transactions: [
           {
             "amount": transctionsData.amount.toJson(),

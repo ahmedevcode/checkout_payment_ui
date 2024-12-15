@@ -2,7 +2,12 @@
     <application
         android:label="checkout_payment_ui"
         android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/ic_launcher"
+        android:allowBackup="false"
+        tools:replace="android:label">
+        
+        
+        
         <activity
             android:name=".MainActivity"
             android:exported="true"

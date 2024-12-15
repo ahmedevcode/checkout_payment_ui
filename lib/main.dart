@@ -5,7 +5,6 @@ import 'package:flutter_stripe/flutter_stripe.dart';
 
 void main() {
   Stripe.publishableKey = ApiKeys.puplishableKey;
-
   runApp(const CheckoutApp());
 }
 
