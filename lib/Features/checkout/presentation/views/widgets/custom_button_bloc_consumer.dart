@@ -47,10 +47,8 @@ class CustomButtonBlocConsumer extends StatelessWidget {
                 Navigator.of(context).push(MaterialPageRoute(
                   builder: (BuildContext context) => PaypalCheckoutView(
                     sandboxMode: true,
-                    clientId:
-                        "ASE96FKXdA9tyRb6aWpFqaAZsEZvD6R2qK3V-nbWh4WR97gEcS6UqK0GnoURLUGr6UNeI7cdlXd-Db23",
-                    secretKey:
-                        "ENDuHtwFGTGv8CDCaUuMAwVhOqDnU-xN5kJi4a_lU8vOQtX0m5Tkmj6uS6KSKiLy-FuhuV8MqnFzH3rJ",
+                    clientId: clientIdpaypal,
+                    secretKey: clientSecretpaypal,
                     transactions: const [
                       {
                         "amount": {
